@@ -15,6 +15,7 @@ struct BowlingViewModel
 
   func bowlingResultsSubmitted(results: String)
   {
-    // TODO Add here call to the logic to display something later
+    let score = BowlingScoreCalculator.calculateGameScoreFromFramesString(results)
+    bowlingResultCallback?(score)
   }
 }

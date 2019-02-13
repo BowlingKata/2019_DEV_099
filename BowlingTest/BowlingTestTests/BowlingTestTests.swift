@@ -91,4 +91,16 @@ class BowlingTestTests: XCTestCase
     let score = BowlingScoreCalculator.calculateGameScoreFromFramesString(s)
     XCTAssert(score == 87)
   }
+  
+  func testViewModel()
+  {
+    var viewModel: BowlingViewModel = BowlingViewModel()
+    let s = "9- 9- 9- 9- 9- 9- 9- 9- 9- 9-" // 90
+
+    viewModel.bowlingResultCallback = { score in
+      XCTAssert(score == 90)
+    }
+
+    viewModel.bowlingResultsSubmitted(results: s)
+  }
 }

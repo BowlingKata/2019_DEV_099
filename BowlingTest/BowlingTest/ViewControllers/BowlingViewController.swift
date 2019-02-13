@@ -28,7 +28,7 @@ class BowlingViewController: UIViewController
 
   @IBAction func calculateButtonAction(_ sender: UIButton)
   {
-    if let input = resultLabel.text
+    if let input = inputTextField.text
     {
       viewModel.bowlingResultsSubmitted(results: input)
     }
