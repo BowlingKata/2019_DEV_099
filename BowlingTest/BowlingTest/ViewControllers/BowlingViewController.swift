@@ -8,23 +8,28 @@
 
 import UIKit
 
-class BowlingViewController: UIViewController {
+class BowlingViewController: UIViewController
+{
+  @IBOutlet weak var inputTextField: UITextField!
+  @IBOutlet weak var resultLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad()
+  {
+    super.viewDidLoad()
+    inputTextField.delegate = self
+  }
 
-        // Do any additional setup after loading the view.
-    }
-    
+  @IBAction func calculateButtonAction(_ sender: UIButton)
+  {
 
-    /*
-    // MARK: - Navigation
+  }
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+extension BowlingViewController: UITextFieldDelegate
+{
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool
+  {
+    // TODO: call view model here
+    return textField.resignFirstResponder()
+  }
 }
