@@ -12,9 +12,17 @@ typealias BowlingResultCallback = ((Int) -> Void)
 struct BowlingViewModel
 {
   var bowlingResultCallback: BowlingResultCallback?
+  var bowlingInputNotValidCallback: (() -> Void)?
 
   func bowlingResultsSubmitted(results: String)
   {
+    guard BowlingGameInputValidator.validateBowlingGameInput(results)
+    else
+    {
+      bowlingInputNotValidCallback?()
+      return
+    }
+
     let score = BowlingScoreCalculator.calculateGameScoreFromFramesString(results)
     bowlingResultCallback?(score)
   }

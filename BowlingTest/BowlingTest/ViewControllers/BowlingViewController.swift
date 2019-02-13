@@ -20,9 +20,19 @@ class BowlingViewController: UIViewController
     super.viewDidLoad()
     inputTextField.delegate = self
 
+    setViewModelCallbacks()
+  }
+
+  private func setViewModelCallbacks()
+  {
     viewModel.bowlingResultCallback = { [weak self] score in
       guard let strongSelf = self else { return }
       strongSelf.resultLabel.text = String(score)
+    }
+
+    viewModel.bowlingInputNotValidCallback = { [weak self] in
+      guard let strongSelf = self else { return }
+      strongSelf.forecastCallFailed()
     }
   }
 
@@ -32,6 +42,15 @@ class BowlingViewController: UIViewController
     {
       viewModel.bowlingResultsSubmitted(results: input)
     }
+  }
+
+  func forecastCallFailed()
+  {
+    let alertController = UIAlertController(title: "Error", message:
+      "Input provided was not valid", preferredStyle: UIAlertController.Style.alert)
+    alertController.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default,handler: nil))
+
+    self.present(alertController, animated: true, completion: nil)
   }
 }
 
