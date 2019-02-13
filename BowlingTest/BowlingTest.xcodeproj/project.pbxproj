@@ -17,6 +17,9 @@
 		0EA459072214A93300EFB72A /* BowlingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA459062214A93300EFB72A /* BowlingViewController.swift */; };
 		0EA4590A2214ABEA00EFB72A /* BowlingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA459092214ABEA00EFB72A /* BowlingViewModel.swift */; };
 		0EA4590C2214AD4100EFB72A /* BowlingScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA4590B2214AD4100EFB72A /* BowlingScoreCalculator.swift */; };
+		0EA4590E2214BBFB00EFB72A /* BowlingGameInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA4590D2214BBFB00EFB72A /* BowlingGameInputValidator.swift */; };
+		0EA459112214C19100EFB72A /* Sequence+All.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA459102214C19100EFB72A /* Sequence+All.swift */; };
+		0EA459132214CE2A00EFB72A /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA459122214CE2A00EFB72A /* String+Regex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		0EA459062214A93300EFB72A /* BowlingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingViewController.swift; sourceTree = "<group>"; };
 		0EA459092214ABEA00EFB72A /* BowlingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingViewModel.swift; sourceTree = "<group>"; };
 		0EA4590B2214AD4100EFB72A /* BowlingScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingScoreCalculator.swift; sourceTree = "<group>"; };
+		0EA4590D2214BBFB00EFB72A /* BowlingGameInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameInputValidator.swift; sourceTree = "<group>"; };
+		0EA459102214C19100EFB72A /* Sequence+All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+All.swift"; sourceTree = "<group>"; };
+		0EA459122214CE2A00EFB72A /* String+Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Regex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 		0EA458D32214A27300EFB72A /* BowlingTest */ = {
 			isa = PBXGroup;
 			children = (
+				0EA4590F2214C16F00EFB72A /* Extensions */,
 				0EA459082214ABCE00EFB72A /* ViewModels */,
 				0EA459032214A74600EFB72A /* ViewControllers */,
 				0EA459022214A73E00EFB72A /* Models */,
@@ -138,6 +145,7 @@
 			children = (
 				0EA459042214A77500EFB72A /* BowlingFrame.swift */,
 				0EA4590B2214AD4100EFB72A /* BowlingScoreCalculator.swift */,
+				0EA4590D2214BBFB00EFB72A /* BowlingGameInputValidator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,6 +164,15 @@
 				0EA459092214ABEA00EFB72A /* BowlingViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0EA4590F2214C16F00EFB72A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0EA459102214C19100EFB72A /* Sequence+All.swift */,
+				0EA459122214CE2A00EFB72A /* String+Regex.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,8 +308,11 @@
 			files = (
 				0EA459072214A93300EFB72A /* BowlingViewController.swift in Sources */,
 				0EA4590C2214AD4100EFB72A /* BowlingScoreCalculator.swift in Sources */,
+				0EA459132214CE2A00EFB72A /* String+Regex.swift in Sources */,
 				0EA459052214A77500EFB72A /* BowlingFrame.swift in Sources */,
+				0EA459112214C19100EFB72A /* Sequence+All.swift in Sources */,
 				0EA458D52214A27300EFB72A /* AppDelegate.swift in Sources */,
+				0EA4590E2214BBFB00EFB72A /* BowlingGameInputValidator.swift in Sources */,
 				0EA4590A2214ABEA00EFB72A /* BowlingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,7 +27,7 @@ class BowlingScoreCalculator
     return calculateScore(frames: frames)
   }
 
-  private static func spliStringInFrames(frames: String) -> [String]
+  public static func spliStringInFrames(frames: String) -> [String]
   {
     let splittedFrames = frames.split(separator: " ").map{String($0)}
     let splittedWithBonusFramesSeparated = splitBonusThrowsFromTenthFrame(frames: splittedFrames)

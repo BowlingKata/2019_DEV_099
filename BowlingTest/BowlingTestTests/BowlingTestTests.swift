@@ -91,7 +91,7 @@ class BowlingTestTests: XCTestCase
     let score = BowlingScoreCalculator.calculateGameScoreFromFramesString(s)
     XCTAssert(score == 87)
   }
-  
+
   func testViewModel()
   {
     var viewModel: BowlingViewModel = BowlingViewModel()
@@ -102,5 +102,75 @@ class BowlingTestTests: XCTestCase
     }
 
     viewModel.bowlingResultsSubmitted(results: s)
+  }
+
+  func testPositiveCharacterSetInput()
+  {
+    let s = "7/ 4/ 35 X 7/ 12 -1 -2 32 X--" // 105
+    let isValid = BowlingGameInputValidator.validateBowlingGameInput(s)
+    XCTAssert(isValid)
+  }
+
+  func testPositiveCharacterPerfectInput()
+  {
+    let s = "X X X X X X X X X X X X" // 300
+    let isValid = BowlingGameInputValidator.validateBowlingGameInput(s)
+    XCTAssert(isValid)
+  }
+
+  func testBowlingAllSpareScoresInput()
+  {
+    let s = "5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5" // -> 150
+    let isValid = BowlingGameInputValidator.validateBowlingGameInput(s)
+    XCTAssert(isValid)
+  }
+
+  func testNegativeInputValidator()
+  {
+    let s = "7/ 4/ h5 X 7/ 12 -1 -2 32 X--" // this is not a valid input
+    let isValid = BowlingGameInputValidator.validateBowlingGameInput(s)
+    XCTAssert(!isValid)
+  }
+
+  func testBowlingNoSpareAndNoStrikesInput()
+  {
+    let s = "9- 9- 9- 9- 9- 9- 9- 9- 9- 9-" // 90
+    let isValid = BowlingGameInputValidator.validateBowlingGameInput(s)
+    XCTAssert(isValid)
+  }
+
+  func testBowlingAllFailsInput()
+  {
+    let s = "-- -- -- -- -- -- -- -- -- --" // 90
+    let isValid = BowlingGameInputValidator.validateBowlingGameInput(s)
+    XCTAssert(isValid)
+  }
+
+  func testBowlingWithLastStrikeInput()
+  {
+    let s = "7/ 4/ 35 X 7/ 12 -1 -9 X 53" // 105
+    let isValid = BowlingGameInputValidator.validateBowlingGameInput(s)
+    XCTAssert(isValid)
+  }
+
+  func testBowlingWithLastSpareAndNullThrowInput()
+  {
+    let s = "7/ 4/ 35 X 7/ 12 -1 -9 32 5/-" // 105
+    let isValid = BowlingGameInputValidator.validateBowlingGameInput(s)
+    XCTAssert(isValid)
+  }
+
+  func testBowlingWithLastStrikeAndNullBonusInput()
+  {
+    let s = "7/ 4/ 35 X 7/ 12 -1 -2 32 X--" // 105
+    let isValid = BowlingGameInputValidator.validateBowlingGameInput(s)
+    XCTAssert(isValid)
+  }
+
+  func testBowlingWIthMissingLastThrow()
+  {
+    let s = "7/ 4/ 35 X 7/ 12 -1 -2 32 9" // 105
+    let isValid = BowlingGameInputValidator.validateBowlingGameInput(s)
+    XCTAssert(!isValid)
   }
 }

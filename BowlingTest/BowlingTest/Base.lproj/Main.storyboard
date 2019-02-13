@@ -47,8 +47,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result will appear here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2t-Bl-kFN">
-                                <rect key="frame" x="88" y="308.5" width="168" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="result will appear here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2t-Bl-kFN">
+                                <rect key="frame" x="88" y="308.5" width="282" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -78,6 +78,7 @@
                             <constraint firstItem="385-Va-RcG" firstAttribute="trailing" secondItem="def-gY-DTN" secondAttribute="trailing" constant="20" id="o6d-D1-s37"/>
                             <constraint firstItem="f2t-Bl-kFN" firstAttribute="centerY" secondItem="92L-OV-d70" secondAttribute="centerY" id="rDz-HN-mfe"/>
                             <constraint firstItem="QFs-ma-rvK" firstAttribute="centerX" secondItem="ZOw-4v-3gd" secondAttribute="centerX" id="v9a-S4-V6n"/>
+                            <constraint firstItem="385-Va-RcG" firstAttribute="trailing" secondItem="f2t-Bl-kFN" secondAttribute="trailing" constant="5" id="wxo-Qd-ffz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="385-Va-RcG"/>
                     </view>
