@@ -42,4 +42,53 @@ class BowlingTestTests: XCTestCase
     XCTAssert(frame.bonus == .strike)
     XCTAssert(frame.pinsKnockedDownAtThrow.reduce(0, +) == 10)
   }
+
+  func testBowlingPerfectScore()
+  {
+    let s = "X X X X X X X X X X X X" // 300
+    let score = BowlingScoreCalculator.calculateGameScoreFromFramesString(s)
+    XCTAssert(score == 300)
+  }
+
+  func testBowlingAllSpareScores()
+  {
+    let s = "5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5" // -> 150
+    let score = BowlingScoreCalculator.calculateGameScoreFromFramesString(s)
+    XCTAssert(score == 150)
+  }
+
+  func testBowlingNoSpareAndNoStrikes()
+  {
+    let s = "9- 9- 9- 9- 9- 9- 9- 9- 9- 9-" // 90
+    let score = BowlingScoreCalculator.calculateGameScoreFromFramesString(s)
+    XCTAssert(score == 90)
+  }
+
+  func testBowlingAllFails()
+  {
+    let s = "-- -- -- -- -- -- -- -- -- --" // 90
+    let score = BowlingScoreCalculator.calculateGameScoreFromFramesString(s)
+    XCTAssert(score == 0)
+  }
+
+  func testBowlingWithLastStrike()
+  {
+    let s = "7/ 4/ 35 X 7/ 12 -1 -9 X 53" // 105
+    let score = BowlingScoreCalculator.calculateGameScoreFromFramesString(s)
+    XCTAssert(score == 105)
+  }
+
+  func testBowlingWithLastSpareAndNullThrow()
+  {
+    let s = "7/ 4/ 35 X 7/ 12 -1 -9 32 5/-" // 105
+    let score = BowlingScoreCalculator.calculateGameScoreFromFramesString(s)
+    XCTAssert(score == 94)
+  }
+
+  func testBowlingWithLastStrikeAndNullBonus()
+  {
+    let s = "7/ 4/ 35 X 7/ 12 -1 -2 32 X--" // 105
+    let score = BowlingScoreCalculator.calculateGameScoreFromFramesString(s)
+    XCTAssert(score == 87)
+  }
 }
