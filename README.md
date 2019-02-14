@@ -8,13 +8,11 @@ UI and Unit tests have been included
 Swift syntax with recent features has been heavily used to have a cleaner and more readable code.
 Rules tof this Kata are at the following link: http://codingdojo.org/kata/Bowling/
 
-## Example
-
 ## Requirements
 
 * Xcode 10
 * Swift 4.2
-*A valid appID to build the app
+* A valid appID to build and run
 
 ## Installation
 
@@ -27,7 +25,7 @@ To run some tests these are possible valid inputs (X is case sensitive):
 *  X X X X X X X X X X X X -> 300
 *  7/ 4/ 35 X 7/ 12 -1 -9 X 53 -> 105
 *  9- 9- 9- 9- 9- 9- 9- 9- 9- 9- -> 90
-*  5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5 // -> 150
+*  5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5 -> 150
 *  X X X X X X X X X X33 -> 279
 
 ## Author
