@@ -11,7 +11,6 @@ import Foundation
 struct BowlingGameInputValidator
 {
   static let validSetForInputString = "123456789-/X "
-  static let validSetForFrame = "123456789-/X"
 
   static let firstNineRegex = ["^X$", "^[0-9]\\/$", "^-\\/$", "^[0-9]{2}$", "^[0-9]-$", "^-[0-9]$", "^--$"]
   static let regexForLastFrame = ["^X{3}$", "^X[0-9]{2}", "X--$", "^X[0-9]-$", "^X-[0-9]$", "^[0-9]\\/-$",
@@ -28,14 +27,6 @@ struct BowlingGameInputValidator
     let splittedString = BowlingScoreCalculator.spliStringInFrames(frames: input)
 
     guard (10...13).contains(splittedString.count) else
-    {
-      return false
-    }
-
-    guard splittedString.all(matching: {
-      inputContainsValidCharsacters($0, validSet: BowlingGameInputValidator.validSetForFrame)
-    })
-      else
     {
       return false
     }
