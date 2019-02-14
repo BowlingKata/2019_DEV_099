@@ -1,8 +1,8 @@
 # 2019_DEV_099 Bowling Kata
 ## Overview
 
-This projects contains an iOS wirtten in Swift that calculates a complete input string of a Bowling Game for a single player
-A single view let's the user enter the results in a UITextField
+This projects contains an iOS app written in Swift that calculates a complete input string of a Bowling Game for a single player
+A single view lets the user enter the results in a UITextField
 MVVM architecture has been used to have a clean seapration of concerns.
 UI and Unit tests have been included
 Swift syntax with recent features has been heavily used to have a cleaner and more readable code.
